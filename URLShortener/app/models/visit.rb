@@ -1,0 +1,7 @@
+class Visit < ApplicationRecord
+  validates :user_id, :url_id, presence: true
+
+  def self.record_visit!(user, short_url)
+    Visit.new(user_id: user.id, url_id: short_url.id)
+  end 
+end 
